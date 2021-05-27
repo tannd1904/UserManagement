@@ -1,3 +1,4 @@
+import { User } from 'src/app/model/user';
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { AuthService } from './service/auth.service';
@@ -9,10 +10,11 @@ import { AuthService } from './service/auth.service';
 })
 export class AppComponent implements OnInit{
   title = 'User Management';
+  userLogin!: User;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {
+   }
 
   ngOnInit(): void {
-    localStorage.clear();
   }
 }
