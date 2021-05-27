@@ -1,0 +1,14 @@
+<header>
+
+  <a *ngIf="!loginService.isLoggedIn()" routerLink="" class="logo">User Management</a>
+ 
+  <p *ngIf="loginService.isLoggedIn()" class="logo">User Management</p>
+
+  <div *ngIf="loginService.isLoggedIn()" class="toggle">
+    <p>Hello, {{username}}</p>
+    <a (click)="logOut()" routerLink="../login" class="btn btn-outline-light">Log Out</a>
+
+  </div>
+
+</header>
+

@@ -1,0 +1,51 @@
+
+
+<div class="form-container" >
+  
+  <form method="post" [formGroup]="loginForm" (ngSubmit)="login()">
+
+    <img src="assets/images/itsj-g.png" class="imgavatar" alt="avatar">
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required formControlName="username"
+            [ngClass]="{'is-invalid': submitted && f.username.errors}"/>
+          <div *ngIf="submitted && f.username.errors">
+            <div *ngIf="f.username.errors.required" class="validation">*Username is required</div>
+          </div>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required formControlName="password"
+            [ngClass]="{'is-invalid': submitted && f.password.errors}"/>
+          <div *ngIf="submitted && f.password.errors">
+            <div *ngIf="f.password.errors.required" class="validation">*Password required</div>
+          </div>
+
+      <p>Don't have account? <a routerLink="../register">Join with us!</a></p>
+
+      <div *ngIf="invalid" class="modal">
+        <div class="modal-content">
+          <div class="container-modal">
+            <h1>Error!</h1>
+  
+            <p>Please check your username, password and try again.</p>
+          
+            <div class="clearfix">
+              <button (click)="cancelSubmit()" type="button" class="okbtn">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Login</button>
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button routerLink="" type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a>password?</a></span>
+    </div>
+  </form>
+
+</div>
+

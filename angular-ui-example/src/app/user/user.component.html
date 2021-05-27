@@ -1,0 +1,29 @@
+<div class="container-dashboard">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a>
+                    <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                    <span class="title"><h2>Dashboard</h2></span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="profile" (click)="select($event)">
+                    <span class="icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
+                    <span routerLink="profile" class="title">Profile</span>    
+                </a>
+            </li>
+            <li>
+                <a routerLink="list-users" (click)="select($event)">
+                    <span class="icon"><i class="fa fa-list" aria-hidden="true"></i></span>
+                    <span routerLink="list-users" class="title">List Users</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="main">
+        <router-outlet></router-outlet>
+    </div>
+    
+</div>

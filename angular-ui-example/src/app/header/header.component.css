@@ -1,0 +1,37 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 100px;
+  background: #21283a;
+}
+
+header .logo {
+  font-size: 1.5em;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.5s;
+  transform-origin: right;
+}
+
+.toggle {
+  color: #fff !important;
+  float: right;
+}
+
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: #036b9b;
+  transition: 0.5s;
+  overflow-x: hidden;
+  z-index: -100 !important;
+  top: 0 !important;
+  left: 0 !important;
+}
