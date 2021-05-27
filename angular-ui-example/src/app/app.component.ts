@@ -8,7 +8,7 @@ import { AuthService } from './service/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'angular-ui-example';
+  title = 'User Management';
 
   constructor(private authService: AuthService) { }
 

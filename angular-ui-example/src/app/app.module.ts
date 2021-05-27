@@ -20,6 +20,7 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { UserComponent } from './user/user.component';
 import { UserModule } from './user/user.module';
 import { AuthService } from './service/auth.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { AuthService } from './service/auth.service';
     LoginComponent,
     SectionMainComponent,
     HeaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
