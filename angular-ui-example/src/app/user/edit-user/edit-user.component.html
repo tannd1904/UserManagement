@@ -13,7 +13,7 @@
             [disabled]=true/>
 
         <label for="firstname"><b>First Name</b></label>
-        <input formControlName="firstname" type="text" placeholder="Enter Firstname" name="firstname" 
+        <input [value]="user.firstname" formControlName="firstname" type="text" placeholder="Enter Firstname" name="firstname" 
                 [ngClass]="{'is-invalid': submitted && f.firstname.errors}"/>
         <div *ngIf="submitted && f.firstname.errors">
             <div *ngIf="f.firstname.errors.required" class="validation">*Firstname is required</div>
@@ -21,7 +21,7 @@
         </div>
 
         <label for="lastname"><b>Last Name</b></label>
-        <input formControlName="lastname" type="text" placeholder="Enter Lastname" name="lastname" 
+        <input [value]="user.lastname" formControlName="lastname" type="text" placeholder="Enter Lastname" name="lastname" 
                 [ngClass]="{'is-invalid': submitted && f.lastname.errors}"/>
         <div *ngIf="submitted && f.lastname.errors">
             <div *ngIf="f.lastname.errors.required" class="validation">*Lastname is required</div>
@@ -31,7 +31,7 @@
         
   
         <label for="email"><b>Email</b></label>
-        <input formControlName="email" type="text" placeholder="Enter Email" name="email" id="email"
+        <input [value]="user.email" formControlName="email" type="text" placeholder="Enter Email" name="email" id="email"
               [ngClass]="{'is-invalid': submitted && f.email.errors}"/>
         <div *ngIf="submitted && f.email.errors">
           <div *ngIf="f.email.errors.required" class="validation">*Email is required</div>

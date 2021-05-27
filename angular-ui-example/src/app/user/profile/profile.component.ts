@@ -14,7 +14,6 @@ export class ProfileComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    //tslint:ignore
     this.username = <string>localStorage.getItem('user');
     if (localStorage.getItem('user') != null) {
       this.userService.getUserByUsername(this.username)

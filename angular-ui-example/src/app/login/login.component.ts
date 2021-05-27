@@ -1,5 +1,5 @@
 import { first, map } from 'rxjs/operators';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {UserService} from '../service/user.service';
@@ -16,8 +16,8 @@ import {sha256} from 'js-sha256'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-
+  @Output() userLoginEvent = new EventEmitter<User>();
+  userLogin!: User;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
     username: '', 
     password: ''
   }
+
 
   loginForm!: FormGroup;
   invalid = false;
@@ -78,6 +79,7 @@ export class LoginComponent implements OnInit {
                   localStorage.setItem('isLoggedIn', 'true');
                   console.log(localStorage.getItem('isLoggedIn'));
                   this.router.navigate([this.returnUrl]);
+                  this.userLoginEvent.emit(this.userLogin);
                 }
                 else {
                   this.invalid = true;

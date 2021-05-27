@@ -7,6 +7,7 @@ header {
   justify-content: space-between;
   padding: 30px 100px;
   background: #21283a;
+  z-index: 100;
 }
 
 header .logo {
@@ -22,16 +23,4 @@ header .logo {
 .toggle {
   color: #fff !important;
   float: right;
-}
-
-.navigation {
-  position: fixed;
-  width: 300px;
-  height: 100%;
-  background: #036b9b;
-  transition: 0.5s;
-  overflow-x: hidden;
-  z-index: -100 !important;
-  top: 0 !important;
-  left: 0 !important;
 }
