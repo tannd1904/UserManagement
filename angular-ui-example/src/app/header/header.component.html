@@ -2,7 +2,7 @@
 
   <a *ngIf="!loginService.isLoggedIn()" routerLink="" class="logo">User Management</a>
  
-  <p *ngIf="loginService.isLoggedIn()" class="logo">User Management</p>
+  <a *ngIf="loginService.isLoggedIn()" routerLink="dashboard/profile" class="logo">User Management</a>
 
   <div *ngIf="loginService.isLoggedIn()" class="toggle">
     <p>Hello, {{username}}</p>

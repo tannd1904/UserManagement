@@ -20,9 +20,7 @@ export class UserComponent implements OnInit {
 
   changeColorFunction(index: number) {
     for (let i = 0; i <this.changeColor.length; i++) {
-      if (i !== index) {
         this.changeColor[i] = false;
-      }
     }
     this.changeColor[index] = true;
   }
