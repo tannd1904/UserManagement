@@ -36,12 +36,12 @@ body {
     list-style: none;
 }
 
-.active {
+.navigation ul li:hover {
     background: #03a9f4;
 }
 
-.navigation ul li:hover {
-    background: #03a9f4;
+.navigation ul li a:hover {
+    opacity: 0.8;
 }
 
 .navigation ul li:nth-child(1) {

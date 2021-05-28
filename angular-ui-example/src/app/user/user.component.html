@@ -8,13 +8,15 @@
                 </a>
             </li>
             <li>
-                <a routerLink="profile" (click)="select($event)">
+                <a routerLink="profile" (click)="changeColorFunction(0)"
+                    [style.background] = "changeColor[0] ? '#03a9f4' : '#036b9b'"> 
                     <span class="icon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
                     <span routerLink="profile" class="title">Profile</span>    
                 </a>
             </li>
             <li>
-                <a routerLink="list-users" (click)="select($event)">
+                <a routerLink="list-users" (click)="changeColorFunction(1)"
+                    [style.background] = "changeColor[1] ? '#03a9f4' : '#036b9b'">
                     <span class="icon"><i class="fa fa-list" aria-hidden="true"></i></span>
                     <span routerLink="list-users" class="title">List Users</span>
                 </a>

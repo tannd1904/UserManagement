@@ -10,13 +10,21 @@ import {RouterModule} from '@angular/router'
 })
 export class UserComponent implements OnInit {
 
+  changeColor = [true, false];
+
   constructor(private router: Router,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
-  select(event: any) {
+  changeColorFunction(index: number) {
+    for (let i = 0; i <this.changeColor.length; i++) {
+      if (i !== index) {
+        this.changeColor[i] = false;
+      }
+    }
+    this.changeColor[index] = true;
   }
 
 }
