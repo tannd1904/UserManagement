@@ -14,7 +14,7 @@ This demo has some features such as:
 
 - Allow user to edit personal information
 
-#Technology used:
+# Technology used:
 
  - Back End: Spring Boot framwork, Spring Security.
 
