@@ -69,10 +69,10 @@ input[type=text], input[type=password]{
     background-color: #04AA6D;
     color: white;
     padding: 16px 20px;
-    margin: 8px 0;
+    margin: 8px 35%;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 30%;
     opacity: 0.9;
     transition: 0.5s;
   }

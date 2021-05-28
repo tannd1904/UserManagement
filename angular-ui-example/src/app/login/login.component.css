@@ -5,9 +5,9 @@
 .imgavatar {
   justify-content: center;
   position: center;
-  width: 200px;
+  width: 300px;
   height: auto;
-  margin-left: 42.5%;
+  margin-left: 40.5%;
 }
 
 
@@ -20,28 +20,47 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button {
+.button-group {
+  padding-left: 30%;
+  background-color: #f1f1f1; 
+}
+
+.loginbtn {
   background-color: #04AA6D;
   color: white;
-  padding: 14px 20px;
+  padding: 16px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 20%;
+  opacity: 0.9;
   transition: 0.5s;
 }
 
-button:hover {
+.cancelbtn {
+  background-color: #c43307;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0 8px 10%;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+  transition: 0.5s;
+}
+
+.cancelbtn:hover {
+    letter-spacing: 4px;
+    background: rgb(206, 109, 109);
+    color: #111;
+  }
+
+.loginbtn:hover {
   letter-spacing: 4px;
-  background: rgb(219, 102, 102);
+  background: rgb(88, 236, 100);
   color: #111;
 }
 
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
 
 .imgcontainer {
   text-align: center;

@@ -43,6 +43,10 @@ export class ListUsersComponent implements OnInit {
 
   }
 
+  goFirstPage() {
+    this.config.currentPage = 1;
+  }
+
   pageChanged(event: any) {
     this.config.currentPage = event;
   }
