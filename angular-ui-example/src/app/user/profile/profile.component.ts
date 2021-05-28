@@ -11,9 +11,7 @@ export class ProfileComponent implements OnInit {
   username : string = '';
   user!: User;
 
-  constructor(private userService: UserService) { }
-
-  ngOnInit(): void {
+  constructor(private userService: UserService) {
     this.username = <string>localStorage.getItem('user');
     if (localStorage.getItem('user') != null) {
       this.userService.getUserByUsername(this.username)
@@ -21,6 +19,10 @@ export class ProfileComponent implements OnInit {
         this.user = res;
       });
     }
+   }
+
+  ngOnInit(): void {
+    
   }
 
 }

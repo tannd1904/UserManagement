@@ -4,24 +4,24 @@
         <h1>Edit Profile</h1>
 
         <label for="username"><b>Username</b></label>
-        <input type="text" name="username" [value]="user.username"
+        <input formControlName="username" type="text" name="username"
               [disabled]=true/>
         
         <label for="psw"><b>Password</b></label>
         <br>
-        <input type="password" name="psw" [value]="user.password"
+        <input formControlName="password" type="password" name="psw"
             [disabled]=true/>
 
         <label for="firstname"><b>First Name</b></label>
-        <input [value]="user.firstname" formControlName="firstname" type="text" placeholder="Enter Firstname" name="firstname" 
-                [ngClass]="{'is-invalid': submitted && f.firstname.errors}"/>
+        <input formControlName="firstname" type="text" placeholder="Enter Firstname" 
+                [ngClass]="{'is-invalid': f.firstname.errors}"/>
         <div *ngIf="submitted && f.firstname.errors">
             <div *ngIf="f.firstname.errors.required" class="validation">*Firstname is required</div>
             <div *ngIf="f.firstname.errors.maxlength" class="validation">*Firstname is maximum 15 characters</div>
         </div>
 
         <label for="lastname"><b>Last Name</b></label>
-        <input [value]="user.lastname" formControlName="lastname" type="text" placeholder="Enter Lastname" name="lastname" 
+        <input formControlName="lastname" type="text" placeholder="Enter Lastname"
                 [ngClass]="{'is-invalid': submitted && f.lastname.errors}"/>
         <div *ngIf="submitted && f.lastname.errors">
             <div *ngIf="f.lastname.errors.required" class="validation">*Lastname is required</div>
@@ -31,7 +31,7 @@
         
   
         <label for="email"><b>Email</b></label>
-        <input [value]="user.email" formControlName="email" type="text" placeholder="Enter Email" name="email" id="email"
+        <input formControlName="email" type="text" placeholder="Enter Email"
               [ngClass]="{'is-invalid': submitted && f.email.errors}"/>
         <div *ngIf="submitted && f.email.errors">
           <div *ngIf="f.email.errors.required" class="validation">*Email is required</div>

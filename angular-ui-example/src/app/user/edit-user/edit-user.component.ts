@@ -1,3 +1,4 @@
+import { first } from 'rxjs/operators';
 import { UserService } from './../../service/user.service';
 import { AuthService } from './../../service/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -27,15 +28,17 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      username: [''],
-      password: [''],
+      username: [{value: '', disabled: true}],
+      password: [{value: '', disabled: true}],
       firstname: ['', [Validators.required, Validators.maxLength(15)]],
       lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]],
       email: ['', [Validators.required, Validators.email, Validators.maxLength(200)]]
     })
 
     this.userService.getUserByUsername(<string>localStorage.getItem('user'))
+      .pipe(first())
       .subscribe((res) => {
+        this.form.patchValue(res);
         this.user = res;
       });
   }
@@ -53,10 +56,7 @@ export class EditUserComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    this.userService.getUserByUsername(<string>localStorage.getItem('user'))
-      .subscribe((res) => {
-        this.user = res;
-      });
+    
     this.user.firstname = this.f.firstname.value;
     this.user.lastname = this.f.lastname.value;
     this.user.email = this.f.email.value;
