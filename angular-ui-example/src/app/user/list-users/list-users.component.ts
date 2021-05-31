@@ -29,7 +29,7 @@ export class ListUsersComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAllUsers().subscribe((res) => {
       res.forEach(value => {
-        if (value.username != 'admin' && value.username != localStorage.getItem('user')) {
+        if (value.username != 'admin' && value.username != sessionStorage.getItem('user')) {
           this.users.push(value);
         }
       });

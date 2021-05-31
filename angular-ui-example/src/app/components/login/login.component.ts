@@ -54,12 +54,12 @@ export class LoginComponent implements OnInit {
     }
     else if (this.loginForm.valid) {
       console.log('123');
-      console.log(localStorage.getItem('token'));
+      console.log(sessionStorage.getItem('token'));
 
       this.authService.authenticate(this.f.username.value, this.encode(this.f.password.value))
         .subscribe((response) => {
           console.log('ppp');
-          localStorage.setItem('token', response.trim());
+          sessionStorage.setItem('token', response.trim());
           
           this.userService.getUserByUsername(this.f.username.value)
             .subscribe((res) => {
@@ -70,10 +70,10 @@ export class LoginComponent implements OnInit {
               if (this.user != null) {
                 if (this.f.username.value == this.user.username && this.encode(this.f.password.value) == this.user.password) {
                   console.log('Login successful');
-                  localStorage.setItem('user', this.f.username.value);
+                  sessionStorage.setItem('user', this.f.username.value);
                   this.authService.username = this.f.username.value;
-                  localStorage.setItem('isLoggedIn', 'true');
-                  console.log(localStorage.getItem('isLoggedIn'));
+                  sessionStorage.setItem('isLoggedIn', 'true');
+                  console.log(sessionStorage.getItem('isLoggedIn'));
                   this.router.navigate([this.returnUrl]);
                   this.userLoginEvent.emit(this.userLogin);
                 }

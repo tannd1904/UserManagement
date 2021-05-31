@@ -17,13 +17,7 @@ export class AppComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck(): void {
-    // this.userService.getUserByUsername(<string>localStorage.getItem('user'))
-    //   .subscribe((res) => {
-    //     this.userLogin = res;
-    //     console.log(this.userLogin);
-    //   }, (err) => {
-    //     console.log('error!!!');
-    //   })
+    
   }
 
   ngOnInit(): void {

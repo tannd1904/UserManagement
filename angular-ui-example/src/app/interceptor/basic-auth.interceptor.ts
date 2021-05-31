@@ -15,11 +15,11 @@ export class BasicAuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log("789");
-    console.log(localStorage.getItem('token'));
-    if (localStorage.getItem('token') != null) {
+    console.log(sessionStorage.getItem('token'));
+    if (sessionStorage.getItem('token') != null) {
       request = request.clone({
         setHeaders: {
-          Authorization: 'Bearer ' + localStorage.getItem('token')
+          Authorization: 'Bearer ' + sessionStorage.getItem('token')
         }
       });
       console.log(request.headers);

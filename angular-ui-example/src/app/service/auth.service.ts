@@ -22,7 +22,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, 
               private router: Router) {
-                this.userSubject = new BehaviorSubject<User>(JSON.parse(JSON.stringify(localStorage.getItem('user'))));
+                this.userSubject = new BehaviorSubject<User>(JSON.parse(JSON.stringify(sessionStorage.getItem('user'))));
                 this.user = this.userSubject.asObservable();
                }
 
@@ -38,14 +38,14 @@ export class AuthService {
   }
 
   logOut() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userToken');
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('user');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('userToken');
+    sessionStorage.removeItem('isLoggedIn');
+    sessionStorage.removeItem('user');
   }
 
   isLoggedIn() {
-    if (localStorage.getItem('isLoggedIn') == 'true') {
+    if (sessionStorage.getItem('isLoggedIn') == 'true') {
       return true;
     }
     else {

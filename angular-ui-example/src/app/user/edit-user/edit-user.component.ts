@@ -35,7 +35,7 @@ export class EditUserComponent implements OnInit {
       email: ['', [Validators.required, Validators.email, Validators.maxLength(200)]]
     })
 
-    this.userService.getUserByUsername(<string>localStorage.getItem('user'))
+    this.userService.getUserByUsername(<string>sessionStorage.getItem('user'))
       .pipe(first())
       .subscribe((res) => {
         this.form.patchValue(res);

@@ -12,8 +12,8 @@ export class ProfileComponent implements OnInit {
   user!: User;
 
   constructor(private userService: UserService) {
-    this.username = <string>localStorage.getItem('user');
-    if (localStorage.getItem('user') != null) {
+    this.username = <string>sessionStorage.getItem('user');
+    if (sessionStorage.getItem('user') != null) {
       this.userService.getUserByUsername(this.username)
       .subscribe((res) => {
         this.user = res;
