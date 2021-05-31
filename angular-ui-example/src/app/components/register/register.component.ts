@@ -1,10 +1,10 @@
-import { AuthService } from './../service/auth.service';
+import { ConfirmPasswordValidator } from 'src/app/validators/confirm-password.validator';
+import { UserService } from './../../service/user.service';
+import { AuthService } from './../../service/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../service/user.service';
 import { first } from 'rxjs/operators';
-import { ConfirmPasswordValidator } from '../validators/confirm-password.validator';
 
 @Component({
   selector: 'app-register',

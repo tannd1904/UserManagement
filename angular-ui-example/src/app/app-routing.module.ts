@@ -1,13 +1,13 @@
+import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import {SectionMainComponent} from './section-main/section-main.component';
-import { RegisterComponent} from './register/register.component';
+import {SectionMainComponent} from './components/section-main/section-main.component';
+import { RegisterComponent} from './components/register/register.component';
 import { AuthGuard } from './guard/auth.guard';
 import { User } from './model/user';
 import { UserRoutingModule } from './user/user-routing.module';
-import {PagenotfoundComponent} from "./pagenotfound/pagenotfound.component";
+import {PagenotfoundComponent} from "./components/pagenotfound/pagenotfound.component";
 
 const routes: Routes = [
   {path: '', component: SectionMainComponent},

@@ -1,13 +1,9 @@
-import { first, map } from 'rxjs/operators';
+import { User } from './../../model/user';
+import { AuthService } from './../../service/auth.service';
+import { UserService } from './../../service/user.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {UserService} from '../service/user.service';
-import {AuthService} from '../service/auth.service';
-import {User} from '../model/user';
-import {Observable} from 'rxjs';
-import { ILogin } from '../model/ilogin';
-import { HttpHeaders, HttpRequest } from '@angular/common/http';
 import {sha256} from 'js-sha256'
 
 @Component({

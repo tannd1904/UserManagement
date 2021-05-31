@@ -1,3 +1,4 @@
+import { PagenotfoundComponent } from './../components/pagenotfound/pagenotfound.component';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { UserComponent } from './user.component';
 import { NgModule } from '@angular/core';
@@ -5,7 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from '../guard/auth.guard';
 import { EditUserComponent } from './edit-user/edit-user.component';
-import {PagenotfoundComponent} from "../pagenotfound/pagenotfound.component";
 
 const routes: Routes = [
   {path: 'dashboard', component: UserComponent, canActivate: [AuthGuard],
