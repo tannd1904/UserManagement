@@ -38,4 +38,9 @@ export class UserService {
     console.log('http://localhost:8080/api/user/' + username);
     return this.http.delete('http://localhost:8080/api/user/' + username);
   }
+
+  getUserBy(field: string, value: string) {
+    console.log('http://localhost:8080/api/get-user-by/' + field + '/' + value);
+    return this.http.get<User[]>('http://localhost:8080/api/get-user-by/' + field + '/' + value);
+  }
 }

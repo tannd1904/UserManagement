@@ -21,6 +21,13 @@ export class ListUsersComponent implements OnInit {
 
   filter: any;
 
+  isSearch = false;
+
+  options = ["Username", "Firstname", "Lastname", "Email"];
+  selected = 'Username';
+  findValue = '';
+  findUsers: User[] = [];
+
   constructor(private route: ActivatedRoute,
               private router: Router,
               private service: UserService) {
@@ -45,6 +52,7 @@ export class ListUsersComponent implements OnInit {
 
   goFirstPage() {
     this.config.currentPage = 1;
+    this.isSearch = true;
   }
 
   pageChanged(event: any) {
@@ -72,6 +80,37 @@ export class ListUsersComponent implements OnInit {
           console.log(error);
         });
     this.reloadPage();
+  }
+
+  search() {
+    if (this.findValue === '') {
+      console.log('Find value is nothing');
+      console.log(this.users);
+      this.service.getAllUsers().subscribe((res) => {
+        res.forEach(value => {
+          if (value.username != 'admin' && value.username != sessionStorage.getItem('user')) {
+            this.findUsers.push(value);
+          }
+        });
+      });
+      this.isSearch = false;
+    }
+    else {
+      this.findUsers.length = 0;
+      console.log(this.selected);
+      console.log(this.findValue);
+      this.service.getUserBy(this.selected, this.findValue)
+        .subscribe((res) => {
+          res.forEach((value) => {
+            if (value.username !== 'admin' && value.username !== sessionStorage.getItem('user')) {
+              this.findUsers.push(value);
+            }
+          });
+          console.log(this.findUsers);
+        }, (err) => {
+          console.log(err);
+        })
+    }
   }
 
   reloadPage() {

@@ -17,4 +17,9 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     void delete(User entity);
 
     void deleteByUsername(String name);
+
+    List<User> findUserByUsernameContaining(String username);
+    List<User> findUserByFirstnameContaining(String firstname);
+    List<User> findUserByLastnameContaining(String lastname);
+    List<User> findUserByEmailContaining(String email);
 }

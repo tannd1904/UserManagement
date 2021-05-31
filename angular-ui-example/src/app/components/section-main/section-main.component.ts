@@ -10,7 +10,6 @@ export class SectionMainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    sessionStorage.clear();
   }
 
 }

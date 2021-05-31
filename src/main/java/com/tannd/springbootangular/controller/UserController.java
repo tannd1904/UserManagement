@@ -104,4 +104,29 @@ public class UserController {
         return ResponseEntity.ok().body("User deleted with success");
     }
 
+    @GetMapping(value = "/get-user-by/Username/{username}")
+    ResponseEntity<?> getUserByUsername(@PathVariable("username") @NotNull String username) {
+        System.out.println("Get user by username: " + username);
+        List<User> users = userService.getUserByUsername(username);
+        return ResponseEntity.ok().body(users);
+    }
+
+    @GetMapping(value = "/get-user-by/Firstname/{firstname}")
+    ResponseEntity<?> getUserByFirstname(@PathVariable("firstname") @NotNull String firstname) {
+        List<User> users = userService.getUserByFirstname(firstname);
+        return ResponseEntity.ok().body(users);
+    }
+
+    @GetMapping(value = "/get-user-by/Lastname/{lastname}")
+    ResponseEntity<?> getUserByLastname(@PathVariable("lastname") @NotNull String lastname) {
+        List<User> users = userService.getUserByLastname(lastname);
+        return ResponseEntity.ok().body(users);
+    }
+
+    @GetMapping(value = "/get-user-by/Email/{email}")
+    ResponseEntity<?> getUserByEmail(@PathVariable("email") @NotNull String email) {
+        List<User> users = userService.getUserByEmail(email);
+        return ResponseEntity.ok().body(users);
+    }
+
 }

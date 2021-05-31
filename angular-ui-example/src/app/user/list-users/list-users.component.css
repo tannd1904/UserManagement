@@ -9,6 +9,10 @@
   padding-top: 20px;
 }
 
+.option-search {
+  float: left;
+}
+
 .search-bar {
   float: right;
   padding:20px 0;
